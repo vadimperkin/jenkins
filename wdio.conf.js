@@ -5,6 +5,9 @@ export const config = {
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
+  host: "localhost",
+  port: 4444,
+  path: "/wd/hub",
   //
   // ==================
   // Specify Test Files
@@ -114,7 +117,16 @@ export const config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-//   services: process.env.CI_JOB_ID ? [] : ["chromedriver"],
+  services: ["docker"],
+  dockerOptions: {
+    image: 'selenium/standalone-chrome',
+    healthCheck: 'http://localhost:4444',
+    options: {
+        p: ['4444:4444'],
+        shmSize: '2g',
+        volume: [`${__dirname}/excel:/excel`]
+    }
+},
   //
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
