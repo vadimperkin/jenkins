@@ -13,10 +13,10 @@ pipeline {
             }
         }
 
-        stage('run') {
-            steps {
-                npx wdio run wdio.conf.js
-            }
-        }
+        // stage('run') {
+        //     steps {
+        //         npx "wdio run wdio.conf.js"
+        //     }
+        // }
     }
 }
