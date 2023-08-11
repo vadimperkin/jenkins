@@ -6,7 +6,7 @@
     "@wdio/local-runner": "^8.14.3",
     "@wdio/mocha-framework": "^8.14.0",
     "@wdio/spec-reporter": "^8.14.0",
-    "wdio-chromedriver-service": "^7.3.2",
+    "wdio-chromedriver-service": "^8.0.0",
     "chromedriver": "^115.0.1",
     "wdio-docker-service": "^3.2.1"
   },
