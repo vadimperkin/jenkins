@@ -5,9 +5,9 @@ export const config = {
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
-  host: "localhost",
-  port: 4444,
-  path: "/wd/hub",
+  // host: "localhost",
+  // port: 4444,
+  // path: "/wd/hub",
   //
   // ==================
   // Specify Test Files
@@ -62,7 +62,7 @@ export const config = {
         args: [
           "window-size=1920,1080",
           "--disable-gpu",
-          ...(process.env.CI_JOB_ID ? ["--headless"] : []),
+          "--headless",
           "--no-sandbox",
           "--disable-dev-shm-usage",
         ],
