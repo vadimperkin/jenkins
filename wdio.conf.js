@@ -119,7 +119,7 @@ export const config = {
   // commands. Instead, they hook themselves up into the test process.
   services: [
     ['chromedriver', {
-      chromedriverCustomPath: "/var/jenkins_home/workspace/chrome/node_modules/chromedriver/lib/chromedriver/chromedriver"
+      chromedriverCustomPath: "/var/jenkins_home/workspace/chrome/node_modules/chromedriver/lib/chromedriver"
     }]
   ],
   dockerOptions: {
