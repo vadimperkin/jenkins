@@ -72,6 +72,7 @@ export const config = {
       maxInstances: 1,
       browserName: "firefox",
       "moz:firefoxOptions": {
+        binary: "/usr/bin/firefox",
         args: [
                 "window-size=1920,1080",
                 "--disable-gpu",
