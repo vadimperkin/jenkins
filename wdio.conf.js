@@ -62,7 +62,7 @@ export const config = {
         args: [
           "window-size=1920,1080",
           "--disable-gpu",
-          // "--headless",
+          "--headless",
           "--no-sandbox",
           "--disable-dev-shm-usage",
         ],
@@ -118,7 +118,7 @@ export const config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: [["chromedriver", {
-    chromedriverCustomPath: "./node_modules/chromedriver/lib/chromedriver/chromedriver"
+    chromedriverCustomPath: "/home/jenkins/agent/workspace/wdio/node_modules/chromedriver/lib/chromedriver/chromedriver"
   }]],
   dockerOptions: {
     image: 'selenium/standalone-chrome',
