@@ -70,7 +70,16 @@ export const config = {
     // },
     {
       maxInstances: 1,
-      browserName: "firefox"
+      browserName: "firefox",
+      "moz:firefoxOptions": {
+        args: [
+                "window-size=1920,1080",
+                "--disable-gpu",
+                "--headless",
+                "--no-sandbox",
+                "--disable-dev-shm-usage",
+              ],
+      },
     }
   ],
 
