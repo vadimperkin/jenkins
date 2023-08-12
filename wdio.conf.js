@@ -5,9 +5,9 @@ export const config = {
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
-  host: "localhost",
-  port: 4444,
-  path: "/wd/hub",
+  // host: "localhost",
+  // port: 4444,
+  // path: "/wd/hub",
   //
   // ==================
   // Specify Test Files
@@ -62,7 +62,7 @@ export const config = {
         args: [
           "window-size=1920,1080",
           "--disable-gpu",
-          "--headless",
+          // "--headless",
           "--no-sandbox",
           "--disable-dev-shm-usage",
         ],
@@ -117,7 +117,7 @@ export const config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["docker"],
+  services: ["selenium-standalone"],
   dockerOptions: {
     image: 'selenium/standalone-chrome',
     healthCheck: 'http://localhost:4444',
@@ -147,7 +147,12 @@ export const config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: ["spec"],
+  reporters: ["spec", ['junit', {
+    outputDir: 'junit-reports',
+    outputFileFormat: function(options) {
+      return `results-${options.cid}.${options.capabilities}.xml`
+    }
+}]],
 
   //
   // Options to be passed to Mocha.

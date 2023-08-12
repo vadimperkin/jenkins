@@ -9,14 +9,14 @@ pipeline {
         }
         stage('docker') {
             steps {
-                sh "docker run -it --entrypoint /bin/bash selenium/standalone-chrome:latest"
+                sh 'docker run -it --entrypoint /bin/bash selenium/standalone-chrome:latest'
             }
         }
 
-        // stage('run') {
-        //     steps {
-        //         npx "wdio run wdio.conf.js"
-        //     }
-        // }
+        stage('run') {
+            steps {
+                npx 'wdio run wdio.conf.js'
+            }
+        }
     }
 }
