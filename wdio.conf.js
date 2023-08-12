@@ -118,7 +118,7 @@ export const config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: [["chromedriver", {
-    chromedriverCustomPath: "/home/jenkins/agent/workspace/wdio/node_modules/chromedriver/lib/chromedriver/chromedriver"
+    chromedriverCustomPath: `${__dirname}/node_modules/chromedriver/lib/chromedriver/chromedriver`
   }]],
   dockerOptions: {
     image: 'selenium/standalone-chrome',
